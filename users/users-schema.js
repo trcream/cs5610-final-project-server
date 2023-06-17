@@ -6,6 +6,11 @@ const usersSchema = new mongoose.Schema(
     password: { type: String, required: true },
     firstName: String,
     lastName: String,
+    userType: {
+      type: String,
+      enum: ["admin", "user", "critic"],
+      default: "user",
+    },
   },
   { collection: "users" }
 );

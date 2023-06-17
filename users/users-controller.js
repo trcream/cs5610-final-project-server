@@ -72,6 +72,8 @@ const findUserById = async (req, res) => {
 const createUser = async (req, res) => {
   console.log("Users-controller: Creating user");
   const newUser = await usersDao.createUser(req.body);
+  console.log("Users-controller: Creating user");
+
   res.json(newUser);
 };
 
