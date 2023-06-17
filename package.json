@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "name": "webdev-final-project-server",
+  "version": "1.0.0",
+  "description": "Node.js Web Server for Final Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "Node",
+    "REST",
+    "Server",
+    "HTTP"
+  ],
+  "author": "Trenton Creamer",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.3.0"
+  }
+}
