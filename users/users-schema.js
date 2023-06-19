@@ -4,7 +4,6 @@ const usersSchema = new mongoose.Schema(
   {
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    // email: { type: String, required: true, unique: true },
     firstName: String,
     lastName: String,
     userType: {
@@ -12,6 +11,9 @@ const usersSchema = new mongoose.Schema(
       enum: ["admin", "user", "critic"],
       default: "user",
     },
+    following: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
+    followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
+    reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "reviews" }],
   },
   { collection: "users" }
 );
