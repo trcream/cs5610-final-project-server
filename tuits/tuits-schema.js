@@ -12,7 +12,8 @@ const schema = mongoose.Schema(
     image: String,
     topic: String,
     title: String,
+    userId: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }], // Reference to User schema
   },
-  { collection: "tuits" }
+  { collection: "reviews" }
 );
 export default schema;

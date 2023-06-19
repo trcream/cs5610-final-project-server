@@ -16,3 +16,8 @@ export const followUser = (uid, otherUserId) =>
 
 export const unfollowUser = (uid, otherUserId) =>
   usersModel.updateOne({ _id: uid }, { $pull: { following: otherUserId } });
+
+// Below is used to join two tables together
+// .find().populate("following").populate("followers");
+// ex we will have reviews and will be able to get the full user object under where the review is
+// from lecture 1:31:14

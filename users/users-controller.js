@@ -15,6 +15,9 @@ const UserController = (app) => {
   // end point for following and unfollowing users
   app.post("/api/users/:uid/follow/:otherUserId", followUser);
   app.post("/api/users/:uid/unfollow/:otherUserId", unfollowUser);
+
+  // Endpoint to get the users that the current user follows
+  // app.get("/api/users/:uid/following", getFollowingUsers);
 };
 
 const findAllUsers = async (req, res) => {
