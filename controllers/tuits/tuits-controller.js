@@ -2,23 +2,29 @@
 // let tuits = posts;
 
 // Gives us access to all the methods in tuits dao
+import { json } from "express";
 import * as tuitsDao from "../../tuits/tuits-dao.js";
 
 const createTuit = async (req, res) => {
+  console.log("Creating tuit");
+  console.log("User ID:", req.body.userId);
+
   try {
     const newTuit = req.body;
     newTuit.likes = 0;
     newTuit.liked = false;
     newTuit.dislikes = 0;
 
-    // Ensure the username and handle are provided
-    newTuit.username = newTuit.username || "";
-    newTuit.handle = newTuit.handle || "";
+    // Ensure the userId and handle are provided
+    newTuit.userId = req.body.userId || null; // Assuming you have the userId available in the request object
+    console.log("User ID on tuit:", newTuit.userId);
+    newTuit.handle = newTuit.handle || "handle";
+    newTuit.username = req.body.username || "username";
 
     // Set default values if not provided
-    newTuit.time = newTuit.time || "";
-    newTuit.image = newTuit.image || "";
-    newTuit.topic = newTuit.topic || "";
+    newTuit.time = newTuit.time || "1 hr";
+    newTuit.image = newTuit.image || "spacex.png";
+    newTuit.topic = newTuit.topic || "topic";
 
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);

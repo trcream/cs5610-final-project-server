@@ -12,7 +12,7 @@ const schema = mongoose.Schema(
     image: String,
     topic: String,
     title: String,
-    userId: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }], // Reference to User schema
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
   },
   { collection: "reviews" }
 );
