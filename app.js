@@ -5,6 +5,7 @@ import UserController from "./users/users-controller.js";
 import TuitController from "./controllers/tuits/tuits-controller.js";
 import session from "express-session";
 import AuthController from "./users/auth-controller.js";
+import moviesController from "./movies/movies-controller.js";
 
 import mongoose from "mongoose";
 // Connect to the database tuiter
@@ -54,6 +55,7 @@ TuitController(app);
 HelloController(app);
 UserController(app);
 AuthController(app);
+moviesController(app);
 
 // app.listen(4000);
 app.listen(process.env.PORT || 4000);

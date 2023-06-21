@@ -8,6 +8,7 @@ import * as tuitsDao from "../../tuits/tuits-dao.js";
 const createTuit = async (req, res) => {
   console.log("Creating tuit");
   console.log("User ID:", req.body.userId);
+  console.log("User Imdb:", req.body.imdbID);
 
   try {
     const newTuit = req.body;
@@ -25,6 +26,7 @@ const createTuit = async (req, res) => {
     newTuit.time = newTuit.time || "1 hr";
     newTuit.image = newTuit.image || "spacex.png";
     newTuit.topic = newTuit.topic || "topic";
+    newTuit.imdbID = newTuit.imdbID || [];
 
     const insertedTuit = await tuitsDao.createTuit(newTuit);
     res.json(insertedTuit);

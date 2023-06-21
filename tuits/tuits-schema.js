@@ -12,7 +12,10 @@ const schema = mongoose.Schema(
     image: String,
     topic: String,
     title: String,
+    poster: String,
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    // Whenever a user reviews a movie the imdbId will be store here
+    imdbID: { type: String },
   },
   { collection: "reviews" }
 );

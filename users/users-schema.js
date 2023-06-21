@@ -14,6 +14,7 @@ const usersSchema = new mongoose.Schema(
     following: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
     followers: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
     reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "reviews" }],
+    imdbID: { type: String },
   },
   { collection: "users" }
 );
