@@ -6,9 +6,11 @@ const createMovie = async (req, res) => {
   console.log("Creating Movie Object");
   //   console.log("User ID:", req.body.userId);
   console.log("User Imdb:", req.body.imdbID);
-  console.log("current user:", req.body._id || "no user id");
+  // console.log("current ")
 
   try {
+    // Add error handling here to fix bug
+
     const newMovie = req.body;
     newMovie.imdbID = req.body.imdbID || "";
     newMovie.title = req.body.title || "";
