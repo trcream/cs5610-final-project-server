@@ -61,7 +61,9 @@ const createUser = async (req, res) => {
 };
 
 const deleteUser = async (req, res) => {
-  const id = req.params.id;
+  console.log("deleteUser from users-controller.js ");
+  const id = req.params.uid;
+  console.log("id is: " + id);
   const status = await usersDao.deleteUser(id);
   res.json(status);
 };
