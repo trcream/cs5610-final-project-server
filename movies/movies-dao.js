@@ -9,5 +9,9 @@ export const createMovie = (movie) => moviesModel.create(movie);
 
 export const deleteMovie = (movieId) => moviesModel.deleteOne({ _id: movieId });
 
-export const updateMovie = (movieId, movie) =>
-  Movies.updateOne({ _id: movieId }, { $set: movie });
+// Search by imdbID
+export const findMovieByImdbId = (imdbId) =>
+  moviesModel.findOne({ imdbID: imdbId });
+
+export const updateMovieByImdbId = (imdbId, movie) =>
+  moviesModel.updateOne({ imdbID: imdbId }, { $set: movie });
