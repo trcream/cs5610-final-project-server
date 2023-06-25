@@ -3,10 +3,13 @@ import { json } from "express";
 import * as moviesDao from "../movies/movies-dao.js";
 
 const createMovie = async (req, res) => {
-  console.log("Creating Movie Object");
-  //   console.log("User ID:", req.body.userId);
-  console.log("User Imdb:", req.body.imdbID);
-  // console.log("current ")
+  // console.log("Creating Movie Object");
+  // //   console.log("User ID:", req.body.userId);
+  // console.log("User Imdb:", req.body.imdbID);
+  // // console.log("current ")
+  // console.log("reviewed by " + req.body.reviewedBy);
+
+  console.log("create Movie req.body is: " + JSON.stringify(req.body));
 
   try {
     // Add error handling here to fix bug
@@ -26,10 +29,11 @@ const createMovie = async (req, res) => {
     newMovie.language = req.body.language || "";
     newMovie.metascore = req.body.metascore || "";
     newMovie.imdbRating = req.body.imdbRating || "";
-    newMovie.reviewedBy = [];
+    newMovie.reviewedBy = req.body.reviewedBy || [];
     newMovie.reviews = [];
 
-    newMovie.reviewedBy.push(req.body._id);
+    // newMovie.reviewedBy.push(req.body.reviewedBy);
+    console.log("reviewed by username: " + req.body.reviewedBy);
 
     const insertedMovie = await moviesDao.createMovie(newMovie);
     res.json(insertedMovie);

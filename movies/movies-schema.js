@@ -21,7 +21,7 @@ const moviesSchema = mongoose.Schema(
     language: String,
     metascore: String,
     imdbRating: String,
-    reviewedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: "users" }],
+    reviewedBy: [String],
     reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "reviews" }],
   },
   { collection: "movies" }
