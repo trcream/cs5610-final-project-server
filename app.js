@@ -8,6 +8,7 @@ import AuthController from "./users/auth-controller.js";
 import moviesController from "./movies/movies-controller.js";
 import AdminController from "./admin/admin-controller.js";
 import CriticsController from "./critics/critics-controller.js";
+import ActorsConroller from "./actors/actors-controller.js";
 
 import mongoose from "mongoose";
 // Connect to the database tuiter
@@ -60,6 +61,7 @@ AuthController(app);
 moviesController(app);
 AdminController(app);
 CriticsController(app);
+ActorsConroller(app);
 
 // app.listen(4000);
 app.listen(process.env.PORT || 4000);
