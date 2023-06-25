@@ -1,9 +1,9 @@
 import * as actorsDao from "./actors-dao.js";
 
 const createActor = async (req, res) => {
-  console.log("Creating Actor Object");
+  // console.log("Creating Actor Object");
   const { name, imdbId } = req.body;
-  console.log("JSON.stringify(req.body) is: " + JSON.stringify(req.body));
+  // console.log("JSON.stringify(req.body) is: " + JSON.stringify(req.body));
 
   try {
     const newActor = {
